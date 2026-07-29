@@ -17,3 +17,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:                 # <-- (Ise 2 spaces aagay hona chahiye, uses-material-design ke bilkul neechay)
+    - assets/image/       # <-- (Ise 4 spaces aagay hona chahiye)

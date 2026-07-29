@@ -1,50 +1,130 @@
-// class person {
-//   final String name;
-//   int age;
-//   String rank;
-//   person(this.name, this.age, this.rank) {
-//     print('$name of the person is this');
-//     print('$age  of th econstructior is ');
-//     print('so jao');
-//   }
-// }
-// class cat {
-//   String name = 'a';
-//   cat(String n) {
-//     name = n;
-//   }
-//   void display() {
-//     print(name);
-//   }
+import 'package:flutter/material.dart';
 
-//   @override
-//   bool operator ==(covariant cat other) => name == other.name;
-// }
-// Future<int> heavy(int a) {
-//   return Future.delayed(Duration(seconds: 3), () {
-//     return a * 3;
-//   });
-// }
-
-// void test() async {
-//   final value = await heavy(2);
-//   print(value);
-// }
-Iterable<int> gettwonumber() sync* {
-  yield 1;
-  yield 2;
+void main() {
+  runApp(const MyApp());
 }
 
-void test() async {
-  for (final value in gettwonumber()) {
-    print(value);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'My UI Practice',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const HomeScreen(),
+    );
   }
 }
 
-void main() {
-  // final c = cat("ahmad");
-  // final c1 = cat('ali');
+//
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
-  // print(c == c1);
-  test();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Home Screen')),
+
+      // body: Center(
+      //   child: Container(
+      //     height: 100,
+      //     width: 100,
+      //     color: Colors.brown,
+      //     child: Center(
+      //       child: Text('devops', style: TextStyle(color: Colors.white)),
+      //     ),
+      //   ),
+      // ),
+      // body: Text(
+      //   'HELLO SOFTWARE ENGINEER',
+      //   style: TextStyle(
+      //     color: Colors.black38,
+      //     fontWeight: FontWeight.bold,
+      //     backgroundColor: Colors.brown,
+      //     decoration: TextDecoration.underline,
+      //     decorationColor: Colors.amberAccent,
+      //   ),
+      // ),
+      // body: Container(
+      //   width: 100,
+      //   height: 100,
+      //   child: Center(child: Image.asset('assets/image/1000010405.jpg')),
+      // ),
+      body: Container(
+        width: 500,
+        height: 500,
+        color: const Color.fromARGB(255, 243, 33, 198),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+          // crossAxisAlignment: CrossAxisAlignment.,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'ahmad',
+                  style: TextStyle(
+                    color: Colors.black38,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'ahmad',
+                  style: TextStyle(
+                    color: Colors.black38,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'ahmad',
+                  style: TextStyle(
+                    color: Colors.black38,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'ahmad',
+                  style: TextStyle(
+                    color: Colors.black38,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            Text(
+              'ahmad',
+              style: TextStyle(
+                color: Colors.black38,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'ahmad',
+              style: TextStyle(
+                color: Colors.black38,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'ahmad',
+              style: TextStyle(
+                color: Colors.black38,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'ahmad',
+              style: TextStyle(
+                color: Colors.black38,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
