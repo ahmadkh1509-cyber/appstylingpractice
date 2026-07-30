@@ -260,17 +260,58 @@ class HomeScreen extends StatelessWidget {
       //itemextent:4
       //   itemCount: arrName.length,
       // ),
-      body: ListView.separated(
-        itemBuilder: (context, index) {
-          return Text(
-            arrName[index],
-            style: TextStyle(fontWeight: FontWeight.bold),
-          );
-        },
-        itemCount: arrName.length,
-        separatorBuilder: (context, index) {
-          return Divider(height: 100, thickness: 4);
-        },
+
+      // body: ListView.separated(
+      //   itemBuilder: (context, index) {
+      //     return Text(
+      //       arrName[index],
+      //       style: TextStyle(fontWeight: FontWeight.bold),
+      //     );
+      //   },
+      //   itemCount: arrName.length,
+      //   separatorBuilder: (context, index) {
+      //     return Divider(height: 100, thickness: 4);
+      //   },
+      // ),
+      // body: Container(
+      //   height: 200,
+      //   width: 200,
+      //   decoration: BoxDecoration(
+      //     color: Colors.blueAccent,
+      //     borderRadius: BorderRadius.only(
+      //       topLeft: Radius.circular(20),
+      //       bottomRight: Radius.circular(20),
+      //     ),
+      //     border: Border.all(width: 8, color: Colors.black38),
+      //     boxShadow: [
+      //       BoxShadow(blurRadius: 50, spreadRadius: 20, color: Colors.brown),
+      //     ],
+      //   ),
+      // ),
+      body: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              height: 100,
+              width: 100,
+              color: Colors.amberAccent,
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(height: 100, width: 100, color: Colors.green),
+          ),
+          Expanded(
+            child: Container(height: 100, width: 100, color: Colors.black),
+          ),
+          Expanded(
+            child: Container(height: 100, width: 100, color: Colors.brown),
+          ),
+          Expanded(
+            child: Container(height: 100, width: 100, color: Colors.blue),
+          ),
+        ],
       ),
     );
   }
