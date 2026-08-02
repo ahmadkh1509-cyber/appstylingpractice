@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var arrName = ['ahmad', 'ali', 'zubair ', 'subtain'];
+    var arrName = [
+      'ahmad',
+      'ali',
+      'zubair ',
+      'subtain',
+      'falak',
+      'molvi',
+      'tania',
+      'tashu',
+    ];
     return Scaffold(
       appBar: AppBar(title: const Text('Home Screen')),
 
@@ -288,31 +298,68 @@ class HomeScreen extends StatelessWidget {
       //     ],
       //   ),
       // ),
-      body: Row(
-        children: [
-          Expanded(
-            flex: 1,
-            child: Container(
-              height: 100,
-              width: 100,
-              color: Colors.amberAccent,
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(height: 100, width: 100, color: Colors.green),
-          ),
-          Expanded(
-            child: Container(height: 100, width: 100, color: Colors.black),
-          ),
-          Expanded(
-            child: Container(height: 100, width: 100, color: Colors.brown),
-          ),
-          Expanded(
-            child: Container(height: 100, width: 100, color: Colors.blue),
-          ),
-        ],
+      // body: Row(
+      //   children: [
+      //     Expanded(
+      //       flex: 1,
+      //       child: Container(
+      //         height: 100,
+      //         width: 100,
+      //         color: Colors.amberAccent,
+      //       ),
+      //     ),
+      //     Expanded(
+      //       flex: 2,
+      //       child: Container(height: 100, width: 100, color: Colors.green),
+      //     ),
+      //     Expanded(
+      //       child: Container(height: 100, width: 100, color: Colors.black),
+      //     ),
+      //     Expanded(
+      //       child: Container(height: 100, width: 100, color: Colors.brown),
+      //     ),
+      //     Expanded(
+      //       child: Container(height: 100, width: 100, color: Colors.blue),
+      //     ),
+      //   ],
+      // ),
+      // body: ListView.separated(
+      //   itemBuilder: (context, index) {
+      //     return ListTile(
+      //       leading: CircleAvatar(
+      //         backgroundImage: AssetImage('assets/image/1000010405.jpg'),
+      //       ),
+      //       title: Text(arrName[index]),
+      //       subtitle: Text('Number'),
+      //       trailing: Icon(Icons.add),
+      //     );
+      //   },
+      //   itemCount: arrName.length,
+      //   separatorBuilder: (context, index) {
+      //     return Divider(height: 50, thickness: 1);
+      //   },
+      // ),
+      // body: CircleAvatar(
+      //   backgroundImage: AssetImage('assets/image/1000010405.jpg'),
+      // ),
+      body: Text(
+        'AHMAD IS THE BEST',
+        style: TextStyle(fontFamily: 'CustomFontName'),
       ),
     );
+  }
+}
+
+class checking extends StatefulWidget {
+  const checking({super.key});
+
+  @override
+  State<checking> createState() => _checkingState();
+}
+
+class _checkingState extends State<checking> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }

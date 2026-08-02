@@ -9,13 +9,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^6.1.0  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  
 
 flutter:
   uses-material-design: true
   assets:                 # <-- (Ise 2 spaces aagay hona chahiye, uses-material-design ke bilkul neechay)
     - assets/image/       # <-- (Ise 4 spaces aagay hona chahiye)
+  
+  fonts:
+    - family: CustomFontName # Aap yahan koi bhi naam rakh sakte hain
+      fonts:
+        - asset: assets/fonts/LibertinusSerif-BoldItalic.ttf
