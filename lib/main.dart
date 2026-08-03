@@ -13,7 +13,26 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My UI Practice',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        textTheme: TextTheme(
+          headlineMedium: TextStyle(
+            fontSize: 23,
+            fontWeight: FontWeight.bold,
+            color: Colors.greenAccent,
+          ),
+          bodySmall: TextStyle(
+            fontWeight: FontWeight.w100,
+            color: Colors.black,
+          ),
+
+          headlineLarge: TextStyle(
+            fontSize: 23,
+            fontWeight: FontWeight.bold,
+            color: Colors.deepOrange,
+          ),
+        ),
+      ),
       home: const HomeScreen(),
     );
   }
@@ -22,9 +41,10 @@ class MyApp extends StatelessWidget {
 //
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    var email = TextEditingController();
+
     var arrName = [
       'ahmad',
       'ali',
@@ -36,7 +56,10 @@ class HomeScreen extends StatelessWidget {
       'tashu',
     ];
     return Scaffold(
-      appBar: AppBar(title: const Text('Home Screen')),
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: const Text('Home Screen'),
+      ),
 
       // body: Center(
       //   child: Container(
@@ -342,24 +365,91 @@ class HomeScreen extends StatelessWidget {
       // body: CircleAvatar(
       //   backgroundImage: AssetImage('assets/image/1000010405.jpg'),
       // ),
-      body: Text(
-        'AHMAD IS THE BEST',
-        style: TextStyle(fontFamily: 'CustomFontName'),
+      // body: Column(
+      //   children: [
+      //     Text(
+      //       'AHMAD IS THE BEST',
+      //       style: Theme.of(
+      //         context,
+      //       ).textTheme.headlineMedium!.copyWith(color: Colors.amberAccent),
+      //     ),
+      //     Text(
+      //       'he is very intelligent and he got fail in driving licenese test thrice ',
+      //       style: Theme.of(context).textTheme.bodySmall,
+      //     ),
+      //   ],
+      // ),
+      // body: Card(
+      //   elevation: 4,
+      //   shadowColor: Colors.black,
+      //   child: Text(
+      //     'AHMAD ',
+      //     style: TextStyle(
+      //       fontSize: 40,
+      //       color: Colors.amberAccent,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      // ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 300,
+              child: TextField(
+                controller: email,
+                obscureText: true,
+                decoration: InputDecoration(
+                  hint: Text(
+                    'INPUT YOU EMAIL HERE',
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    borderSide: BorderSide(
+                      color: const Color.fromARGB(255, 38, 5, 96),
+                      width: 2,
+                    ),
+                  ),
+
+                  suffix: Icon(Icons.analytics_outlined),
+                ),
+              ),
+            ),
+            Container(
+              width: 300,
+              child: TextField(
+                decoration: InputDecoration(
+                  hint: Text(
+                    'INPUT YOU passsword HERE',
+                    style: TextStyle(
+                      color: const Color.fromARGB(255, 39, 182, 44),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    borderSide: BorderSide(
+                      color: const Color.fromARGB(255, 44, 10, 101),
+                      width: 2,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                String Uemail = email.text;
+              },
+              child: Text('Login'),
+            ),
+          ],
+        ),
       ),
     );
-  }
-}
-
-class checking extends StatefulWidget {
-  const checking({super.key});
-
-  @override
-  State<checking> createState() => _checkingState();
-}
-
-class _checkingState extends State<checking> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
