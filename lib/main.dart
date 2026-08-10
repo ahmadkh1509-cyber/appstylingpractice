@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/widgets/rounderbtn.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
@@ -56,11 +57,18 @@ class HomeScreen extends StatelessWidget {
     //   'tania',
     //   'tashu',
     // ];
+
     var Time = DateTime.now();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
-        title: const Text('Home Screen'),
+        backgroundColor: const Color.fromARGB(255, 27, 37, 28),
+        title: Center(
+          child: const Text(
+            'YOUR INSTA',
+            style: TextStyle(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
+        ),
       ),
 
       // body: Center(
@@ -481,20 +489,120 @@ class HomeScreen extends StatelessWidget {
       //     ],
       //   ),
       // ),
-      body: Container(
-        child: GridView.count(
-          crossAxisCount: 3,
-          children: [
-            Container(color: Colors.black),
-            Container(color: Colors.blue),
-            Container(color: Colors.green),
-            Container(color: Colors.cyanAccent),
-            Container(color: Colors.red),
-            Container(color: Colors.blueGrey),
-            Container(color: Colors.deepOrange),
-            Container(color: Colors.black),
-          ],
-        ),
+      // body:
+      //     GridView.count(
+      //       crossAxisCount: 3,
+      //       children: [
+      //     Container(color: Colors.black),
+      //     Container(color: Colors.blue),
+      //     Container(color: Colors.green),
+      //     Container(color: Colors.cyanAccent),
+      //     Container(color: Colors.red),
+      //     Container(color: Colors.blueGrey),
+      //     Container(color: Colors.deepOrange),
+      //     Container(color: Colors.black),
+      //       ],),
+
+      //     GridView.extent(
+      //       maxCrossAxisExtent: 11,
+      //       crossAxisSpacing: 11,
+      //       mainAxisSpacing: 11,
+      //       children: [
+      //         Container(color: Colors.black),
+      //         Container(color: Colors.blue),
+      //         Container(color: Colors.green),
+      //         Container(color: Colors.cyanAccent),
+      //         Container(color: Colors.red),
+      //         Container(color: Colors.blueGrey),
+      //         Container(color: Colors.deepOrange),
+      //         Container(color: Colors.black),
+      //       ],
+      //     ),
+      // body: GridView.builder(
+      //   itemBuilder: (context, index) {
+      //     return Container(width: 100, height: 100, color: Colors.black);
+      //   },
+      //   itemCount: 8,
+      //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      //     crossAxisCount: 3,
+      //     mainAxisSpacing: 11,
+      //     crossAxisSpacing: 11,
+      //   ),
+      // ),
+      // body: Column(
+      //   children: [
+      //     Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //       children: [
+      //         Container(alignment: Alignment.topLeft, child: Icon(Icons.add)),
+      //         Center(
+      //           child: Container(
+      //             child: Text(
+      //               'INSTAGRAM',
+      //               style: TextStyle(fontFamily: 'CustomFontName '),
+      //             ),
+      //           ),
+      //         ),
+      //         Container(child: Icon(Icons.monitor_heart)),
+      //       ],
+      //     ),
+      //     Row(
+      //       children: [
+      //         ListView.builder(
+      //           itemBuilder: (context, index) {
+      //             return SizedBox(
+      //               width: 100,
+
+      //               child: CircleAvatar(
+      //                 backgroundImage: AssetImage('1000010405.jpg'),
+      //               ),
+      //             );
+      //           },
+      //           itemCount: 20,
+      //         ),
+      //       ],
+      //     ),
+      //   ],
+      // ),
+      //  body: Container(
+      //     width: 250,
+      //     height: 250,
+      //     child: Stack(
+      //       children: [
+      //         Container(width: 200, height: 200, color: Colors.amberAccent),
+      //         Positioned (
+      //           left: 15,
+      //           bottom: 15,
+      //           child: Container(
+      //             width: 200,
+      //             height: 200,
+      //             color: Colors.blueAccent,
+      //           ),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // body: Roundedbtn(btnName: 'LOCK', icon: Icon(Icons.lock)),
+      body: Column(
+        children: [
+          Container(
+            color: Colors.blueGrey,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text('Ahmad is the best'),
+            ),
+          ),
+          SizedBox(width: 200, height: 200),
+          Container(
+            color: Colors.blueGrey,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                'Ahmad you can do so dont worry man you can do man some cars is missing you',
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
