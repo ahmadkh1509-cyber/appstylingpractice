@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/splashscreen.dart';
 import 'package:flutter_application_2/widgets/rounderbtn.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -35,18 +36,30 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const HomeScreen(),
+      home: HomeScreen(),
     );
   }
 }
 
 //
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  RangeValues values = RangeValues(0, 1);
+
   @override
   Widget build(BuildContext context) {
     var email = TextEditingController();
-
+    var name = TextEditingController();
+    RangeLabels labels = RangeLabels(
+      values.start.toString(),
+      values.end.toString(),
+    );
     // var arrName = [
     //   'ahmad',
     //   'ali',
@@ -583,22 +596,83 @@ class HomeScreen extends StatelessWidget {
       //     ),
       //   ),
       // body: Roundedbtn(btnName: 'LOCK', icon: Icon(Icons.lock)),
+      // body: Column(
+      //   children: [
+      //     Container(
+      //       color: Colors.blueGrey,
+      //       child: ElevatedButton(
+      //         onPressed: () {},
+      //         child: Text('Ahmad is the best'),
+      //       ),
+      //     ),
+      //     SizedBox(width: 200, height: 200),
+      //     Container(
+      //       color: Colors.blueGrey,
+      //       child: ElevatedButton(
+      //         onPressed: () {},
+      //         child: Text(
+      //           'Ahmad you can do so dont worry man you can do man some cars is missing you',
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
+      // body: RichText(
+      //   text: TextSpan(
+      //     style: TextStyle(
+      //       color: Colors.blueAccent,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //     children: <TextSpan>[
+      //       TextSpan(text: 'AHMAD IS THE BEST.BESIDE '),
+      //       TextSpan(
+      //         text: 'SOFTWARE ENGINEER',
+      //         style: TextStyle(
+      //           color: Colors.black,
+      //           fontSize: 34,
+      //           fontWeight: FontWeight.bold,
+      //         ),
+      //       ),
+      //       TextSpan(text: 'HE IS A GOOD MAN TOO'),
+      //     ],
+      //   ),
+      // ),
+      //
+      // body: ElevatedButton(
+      //   onPressed: () {
+      //     Navigator.push(
+      //       context,
+      //       MaterialPageRoute(builder: (context) => ahmad()),
+      //     );
+      //   },
+      //   child: Text('KHAN'),
+      // ),
+      // body: Column(
+      //   children: [
+      //     Container(
+      //       color: Colors.cyanAccent,
+      //       child: Center(child: Text("AHMAD your app is started")),
+      //     ),
+      //     TextField(controller: name),
+      //   ],
+      // ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            color: Colors.blueGrey,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text('Ahmad is the best'),
-            ),
-          ),
-          SizedBox(width: 200, height: 200),
-          Container(
-            color: Colors.blueGrey,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'Ahmad you can do so dont worry man you can do man some cars is missing you',
+          Center(
+            child: Container(
+              child: RangeSlider(
+                values: values,
+                labels: labels,
+                divisions: 10,
+                min: 0,
+                max: 1,
+                onChanged: (newvalues) {
+                  values = newvalues;
+                  print('${values.start}  ${values.end}');
+
+                  setState(() {});
+                },
               ),
             ),
           ),
