@@ -52,6 +52,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   RangeValues values = RangeValues(0, 1);
 
+  var _width = 100.0; //iable used for animated container chapter
+  var _height = 200.0;
+  var flag = true;
   @override
   Widget build(BuildContext context) {
     var email = TextEditingController();
@@ -656,25 +659,52 @@ class _HomeScreenState extends State<HomeScreen> {
       //     TextField(controller: name),
       //   ],
       // ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Container(
-              child: RangeSlider(
-                values: values,
-                labels: labels,
-                divisions: 10,
-                min: 0,
-                max: 1,
-                onChanged: (newvalues) {
-                  values = newvalues;
-                  print('${values.start}  ${values.end}');
+      // body: Column(
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   children: [
+      //     Center(
+      //       child: Container(
+      //         child: RangeSlider(
+      //           values: values,
+      //           labels: labels,
+      //           divisions: 10,
+      //           min: 0,
+      //           max: 1,
+      //           onChanged: (newvalues) {
+      //             values = newvalues;
+      //             print('${values.start}  ${values.end}');
 
-                  setState(() {});
-                },
-              ),
-            ),
+      //             setState(() {});
+      //           },
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
+      body: Column(
+        children: [
+          AnimatedContainer(
+            duration: Duration(seconds: 2),
+            width: _width,
+            height: _height,
+            color: Colors.black,
+            curve: Curves.bounceInOut,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                if (flag) {
+                  _height = 100.0;
+                  _width = 200.0;
+                  flag = false;
+                } else {
+                  _height = 200.0;
+                  _width = 100.0;
+                  flag = true;
+                }
+              });
+            },
+            child: Text("Animate"),
           ),
         ],
       ),
