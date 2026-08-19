@@ -55,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
   var _width = 100.0; //iable used for animated container chapter
   var _height = 200.0;
   var flag = true;
+  var myopa = 1.0;
   @override
   Widget build(BuildContext context) {
     var email = TextEditingController();
@@ -681,30 +682,82 @@ class _HomeScreenState extends State<HomeScreen> {
       //     ),
       //   ],
       // ),
+      // body: Column(
+      //   children: [
+      //     AnimatedContainer(
+      //       duration: Duration(seconds: 2),
+      //       width: _width,
+      //       height: _height,
+      //       color: Colors.black,
+      //       curve: Curves.bounceInOut,
+      //     ),
+      //     ElevatedButton(
+      //       onPressed: () {
+      //         setState(() {
+      //           if (flag) {
+      //             _height = 100.0;
+      //             _width = 200.0;
+      //             flag = false;
+      //           } else {
+      //             _height = 200.0;
+      //             _width = 100.0;
+      //             flag = true;
+      //           }
+      //         });
+      //       },
+      //       child: Text("Animate"),
+      //     ),
+      //   ],
+      // ),
+      // body: Column(
+      //   children: [
+      //     AnimatedOpacity(
+      //       opacity: myopa,
+      //       duration: Duration(seconds: 2),
+      //       child: Container(width: 100, height: 200, color: Colors.black12),
+      //     ),
+      //     ElevatedButton(
+      //       onPressed: () {
+      //         myopa = 0;
+      //         setState(() {});
+      //       },
+      //       child: Text("ANIMATE"),
+      //     ),
+      //   ],
+      // ),
       body: Column(
         children: [
-          AnimatedContainer(
-            duration: Duration(seconds: 2),
-            width: _width,
-            height: _height,
-            color: Colors.black,
-            curve: Curves.bounceInOut,
+          SingleChildScrollView(
+            child: AnimatedCrossFade(
+              firstCurve: Curves.fastEaseInToSlowEaseOut,
+              secondCurve: Curves.easeInOutSine,
+              duration: Duration(seconds: 2),
+              firstChild: Container(
+                height: 100,
+                width: 200,
+                color: const Color.fromARGB(255, 31, 28, 19),
+              ),
+              secondChild: Container(
+                width: 200,
+                height: 400,
+                child: Image.asset('assets/image/1000010405.jpg'),
+              ),
+              crossFadeState: flag
+                  ? CrossFadeState.showSecond
+                  : CrossFadeState.showFirst,
+            ),
           ),
           ElevatedButton(
             onPressed: () {
               setState(() {
                 if (flag) {
-                  _height = 100.0;
-                  _width = 200.0;
                   flag = false;
                 } else {
-                  _height = 200.0;
-                  _width = 100.0;
                   flag = true;
                 }
               });
             },
-            child: Text("Animate"),
+            child: Text("animate"),
           ),
         ],
       ),
