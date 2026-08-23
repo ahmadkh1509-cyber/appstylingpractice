@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/frontview.dart';
 import 'package:flutter_application_2/splashscreen.dart';
 import 'package:flutter_application_2/widgets/rounderbtn.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -401,7 +402,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //       ).textTheme.headlineMedium!.copyWith(color: Colors.amberAccent),
       //     ),
       //     Text(
-      //       'he is very intelligent and he got fail in driving licenese test thrice ',
+      //       'he is very intelligent  ',
       //       style: Theme.of(context).textTheme.bodySmall,
       //     ),
       //   ],
@@ -725,41 +726,64 @@ class _HomeScreenState extends State<HomeScreen> {
       //     ),
       //   ],
       // ),
-      body: Column(
-        children: [
-          SingleChildScrollView(
-            child: AnimatedCrossFade(
-              firstCurve: Curves.fastEaseInToSlowEaseOut,
-              secondCurve: Curves.easeInOutSine,
-              duration: Duration(seconds: 2),
-              firstChild: Container(
-                height: 100,
-                width: 200,
-                color: const Color.fromARGB(255, 31, 28, 19),
-              ),
-              secondChild: Container(
-                width: 200,
-                height: 400,
-                child: Image.asset('assets/image/1000010405.jpg'),
-              ),
-              crossFadeState: flag
-                  ? CrossFadeState.showSecond
-                  : CrossFadeState.showFirst,
-            ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
-                if (flag) {
-                  flag = false;
-                } else {
-                  flag = true;
-                }
-              });
-            },
-            child: Text("animate"),
-          ),
-        ],
+      // body: Column(
+      //   children: [
+      //     SingleChildScrollView(
+      //       child: AnimatedCrossFade(
+      //         firstCurve: Curves.fastEaseInToSlowEaseOut,
+      //         secondCurve: Curves.easeInOutSine,
+      //         duration: Duration(seconds: 2),
+      //         firstChild: Container(
+      //           height: 100,
+      //           width: 200,
+      //           color: const Color.fromARGB(255, 31, 28, 19),
+      //         ),
+      //         secondChild: Container(
+      //           width: 200,
+      //           height: 400,
+      //           child: Image.asset('assets/image/1000010405.jpg'),
+      //         ),
+      //         crossFadeState: flag
+      //             ? CrossFadeState.showSecond
+      //             : CrossFadeState.showFirst,
+      //       ),
+      //     ),
+      //     ElevatedButton(
+      //       onPressed: () {
+      //         setState(() {
+      //           if (flag) {
+      //             flag = false;
+      //           } else {
+      //             flag = true;
+      //           }
+      //         });
+      //       },
+      //       child: Text("animate"),
+      //     ),
+      //   ],
+      //),
+      // body: Center(
+      //   child: InkWell(
+      //     onTap: () {
+      //       Navigator.push(
+      //         context,
+      //         MaterialPageRoute(builder: (context) => herowidget()),
+      //       );
+      //     },
+      //     child: Hero(
+      //       tag: 'background',
+      //       child: Container(
+      //         width: 100,
+      //         height: 200,
+      //         child: Image.asset('assets/image/1000010405.jpg'),
+      //       ),
+      //     ),
+      //   ),
+      // ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [Colors.amberAccent, Colors.cyan]),
+        ),
       ),
     );
   }
