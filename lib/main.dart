@@ -65,16 +65,16 @@ class _HomeScreenState extends State<HomeScreen> {
       values.start.toString(),
       values.end.toString(),
     );
-    // var arrName = [
-    //   'ahmad',
-    //   'ali',
-    //   'zubair ',
-    //   'subtain',
-    //   'falak',
-    //   'molvi',
-    //   'tania',
-    //   'tashu',
-    // ];
+    var arrName = [
+      'ahmad',
+      'ali',
+      'zubair ',
+      'subtain',
+      'falak',
+      'molvi',
+      'tania',
+      'tashu',
+    ];
 
     var Time = DateTime.now();
     return Scaffold(
@@ -780,9 +780,26 @@ class _HomeScreenState extends State<HomeScreen> {
       //     ),
       //   ),
       // ),
+      // body: Container(
+      //   decoration: BoxDecoration(
+      //     gradient: LinearGradient(colors: [Colors.amberAccent, Colors.cyan]),
+      //   ),
+      // ),
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [Colors.amberAccent, Colors.cyan]),
+        child: ListView(
+          children: arrName.map((values) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.blueAccent,
+                ),
+
+                child: Center(child: Text(values)),
+              ),
+            );
+          }).toList(),
         ),
       ),
     );
